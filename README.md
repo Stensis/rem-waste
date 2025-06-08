@@ -1,12 +1,5 @@
 # REM-WASTE
 
-_Effortlessly choose the perfect skip for waste._
-
-![Last Commit](https://img.shields.io/github/last-commit/your-username/rem-waste?style=for-the-badge)
-![Language](https://img.shields.io/github/languages/top/your-username/rem-waste?style=for-the-badge)
-
----
-
 ### Built with the tools and technologies:
 
 ![JSON](https://img.shields.io/badge/-JSON-informational?style=flat-square)
