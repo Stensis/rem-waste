@@ -72,7 +72,7 @@ Build REM-WASTE from the source and install dependencies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/rem-waste.git
+git clone https://github.com/Stensis/rem-waste
 cd rem-waste
 
 # Install dependencies
