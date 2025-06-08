@@ -45,7 +45,7 @@ const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
             <Box
                 sx={{
                     position: 'relative',
-                    width: { xs: '100%', sm: '56%' },
+                    width: { xs: '100%', sm: '50%' },
                     height: { xs: 200, sm: '100%' },
                 }}
             >
@@ -84,7 +84,7 @@ const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
 
             <Box
                 sx={{
-                    width: { xs: '100%', sm: '44%' },
+                    width: { xs: '100%', sm: '50%' },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
@@ -110,7 +110,7 @@ const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
                         <Chip
                             label={`🏗 Heavy Waste: ${skip.allows_heavy_waste ? 'Yes' : 'No'}`}
                             size="small"
-                            sx={{ fontWeight: 'bold', bgcolor: theme.palette.primary.main, color: theme.palette.primary.contrastText }}
+                            sx={{ fontWeight: 'bold',  color: theme.palette.primary.contrastText }}
                         />
                         {skip.transport_cost && (
                             <Chip
