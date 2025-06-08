@@ -41,11 +41,8 @@ const getLastActiveIndex = (
 const ProgressSteps = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
     const activeStepIndex = getLastActiveIndex(steps);
-    const totalSteps = steps.length;
-    const progressPercent = ((activeStepIndex + 1) / totalSteps) * 100;
-
+    const progressPercent = ((activeStepIndex + 1) / steps.length) * 100;
     const [selectedStepIndex, setSelectedStepIndex] = useState(activeStepIndex);
 
     const handleSelectChange = (event: SelectChangeEvent<number>) => {
@@ -87,7 +84,7 @@ const ProgressSteps = () => {
                     position: 'relative',
                     height: 10,
                     borderRadius: 5,
-                    backgroundColor: '#202540', // darker shade of #364a7a
+                    backgroundColor: theme.palette.divider,
                     mb: 4,
                 }}
             >
@@ -96,21 +93,19 @@ const ProgressSteps = () => {
                         height: '100%',
                         borderRadius: 5,
                         width: `${progressPercent}%`,
-                        backgroundImage: 'linear-gradient(45deg, #364a7a, #4a5e9c)',
-                        backgroundSize: '200% 200%',
-                        animation: 'moveGradient 3s linear infinite',
+                        backgroundColor: theme.palette.primary.main,
                         transition: 'width 0.4s ease-in-out',
                     }}
                 />
             </Box>
 
-            {/* Steps with Tooltips */}
+            {/* Step Icons */}
             <Box display="flex" justifyContent="space-between" alignItems="center">
                 {steps.map((step, index) => {
-                    const tooltipTitle = step.active ? 'Completed ✅' : 'Coming soon 🚧';
+                    const isActive = step.active;
 
                     return (
-                        <Tooltip key={index} title={tooltipTitle} arrow>
+                        <Tooltip key={index} title={isActive ? 'Completed ✅' : 'Coming soon 🚧'} arrow>
                             <Box textAlign="center" sx={{ cursor: 'default' }}>
                                 <Box
                                     sx={{
@@ -121,10 +116,14 @@ const ProgressSteps = () => {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        backgroundColor: step.active ? '#364a7a' : '#2c2f48',
-                                        color: step.active ? '#cfdcff' : '#7c84a1',
-                                        boxShadow: step.active
-                                            ? '0 0 0 4px rgba(54, 74, 122, 0.3)'
+                                        backgroundColor: isActive
+                                            ? theme.palette.primary.main
+                                            : theme.palette.background.paper,
+                                        color: isActive
+                                            ? theme.palette.primary.contrastText
+                                            : theme.palette.text.secondary,
+                                        boxShadow: isActive
+                                            ? `0 0 0 4px ${theme.palette.primary.main}44`
                                             : 'none',
                                         transition: 'all 0.3s ease',
                                     }}
@@ -134,8 +133,10 @@ const ProgressSteps = () => {
                                 <Typography
                                     variant="caption"
                                     sx={{
-                                        fontWeight: step.active ? 'bold' : 400,
-                                        color: step.active ? '#cfdcff' : '#888ea3',
+                                        fontWeight: isActive ? 'bold' : 400,
+                                        color: isActive
+                                            ? theme.palette.text.primary
+                                            : theme.palette.text.secondary,
                                     }}
                                 >
                                     {step.label}
@@ -145,16 +146,6 @@ const ProgressSteps = () => {
                     );
                 })}
             </Box>
-
-            {/* Keyframe animation for the gradient progress bar */}
-            <style>
-                {`
-                @keyframes moveGradient {
-                    0% { background-position: 0% 50%; }
-                    100% { background-position: 100% 50%; }
-                }
-                `}
-            </style>
         </Box>
     );
 };
