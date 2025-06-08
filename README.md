@@ -22,7 +22,6 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
-- [Features](#features)
 
 ---
 
@@ -77,8 +76,11 @@ git clone https://github.com/your-username/rem-waste.git
 cd rem-waste
 
 # Install dependencies
-npm install
+npm install 
+```
 
-# Usage
+### Usage
 To start the development server:
+```bash
 npm run dev
+```
