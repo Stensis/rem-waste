@@ -89,7 +89,7 @@ const ProgressSteps = () => {
             height: '100%',
             borderRadius: 5,
             width: `${progressPercent}%`,
-            backgroundColor: theme.palette.secondary.main, // Yellow progress bar
+            backgroundColor: theme.palette.secondary.main, 
             transition: 'width 0.4s ease-in-out',
           }}
         />
@@ -113,13 +113,13 @@ const ProgressSteps = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     backgroundColor: isActive
-                      ? theme.palette.secondary.main // Yellow background if active
+                      ? theme.palette.secondary.main 
                       : theme.palette.background.paper,
                     color: isActive
-                      ? theme.palette.getContrastText(theme.palette.secondary.main) // Contrast text on yellow
+                      ? theme.palette.getContrastText(theme.palette.secondary.main) 
                       : theme.palette.text.secondary,
                     boxShadow: isActive
-                      ? `0 0 0 4px ${theme.palette.secondary.main}44` // Yellow glow with opacity
+                      ? `0 0 0 4px ${theme.palette.secondary.main}44` 
                       : 'none',
                     transition: 'all 0.3s ease',
                   }}

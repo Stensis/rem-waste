@@ -18,6 +18,7 @@
 
 - [Overview](#overview)
 - [Why Rem-Waste?](#why-rem-waste)
+- [Approach](#approach)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -30,16 +31,17 @@
 **REM-WASTE** helps users effortlessly choose the most suitable skip for their waste disposal needs. Designed with simplicity and performance in mind, the platform is powered by modern web tools and frameworks.
 
 ### Desktop View
-![Desktop View](./src/assets/DesktopView.png)
+![Desktop View](./src/assets/desktop.png)
 
 ### Laptop View
 ![Laptop View](./src/assets/laptop.png)
 
 ### iPad View
-![iPad View](./src/assets/ipadView.png)
+![iPad View](./src/assets/ipad.png)
 
 ### Phone View
-![Phone View](./src/assets/phoneView.png)
+![Phone View](./src/assets/phone.png)
+
 
 
 ---
@@ -56,8 +58,20 @@ This project enhances the skip hire experience through dynamic data fetching and
 - 🔒 **Type Safety**: Implements TypeScript for enhanced code quality and reduced errors, streamlining development.
 
 ---
+## Approach
+
+This application was designed with user experience and scalability in mind. My approach included:
+
+- Structuring components modularly to keep the codebase maintainable.
+- Using Material UI with a custom theme for consistent styling.
+- Fetching skip data dynamically via the `getSkipsByLocation` service based on postcode.
+- Creating reusable UI components (like `SkipCard` and `ProgressSteps`) to streamline development.
+- Optimizing responsiveness using MUI's Grid system and media queries.
+
+
 
 ## Getting Started
+
 
 ### Prerequisites
 

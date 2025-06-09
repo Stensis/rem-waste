@@ -10,3 +10,9 @@ export type Skip = {
   allows_heavy_waste: boolean;
   imageUrl?: string;
 };
+
+export interface SkipCardProps {
+  skip: Skip;
+  isSelected: boolean;
+  onSelect: (id: string) => void;
+}
